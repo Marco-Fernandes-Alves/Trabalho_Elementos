@@ -57,7 +57,7 @@ def main():
     if not generate_narrative_report(eda_dir, analysis_dir, report_dir):
         print('Falha na geração do relatório narrativo.')
     
-    print('\n=== Dataset Final ===')
+    print('\nDataset Final')
     print(f'Arquivo integrado: {output_file}')
     print(f'Arquivo limpo: {clean_output}')
     print(f'- Total de registros: {len(df_analysis)}')
