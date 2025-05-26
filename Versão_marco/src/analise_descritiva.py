@@ -41,7 +41,7 @@ def unsupervised_analysis(df, output_dir):
         df['PCA2'] = principal_components[:, 1]
         
         # Visualização
-        plt.figure(figsize=(12, 8))  # Aumentado para 12x8
+        plt.figure(figsize=(12, 8))
         sns.scatterplot(data=df, x='PCA1', y='PCA2', hue='Cluster', palette='viridis', s=80)
         plt.title(f'Agrupamento de Municípios (Silhouette Score: {silhouette_avg:.2f})', fontsize=14)
         plt.xlabel('PCA1', fontsize=12)
