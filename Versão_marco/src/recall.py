@@ -7,7 +7,7 @@ def load_multiple_csv(input_dir):
     csv_files = glob.glob(os.path.join(input_dir, "*.csv"))
 
     if not csv_files:
-        print(f" Nenhum arquivo CSV encontrado em {input_dir}")
+        print(f"Nenhum arquivo CSV encontrado em {input_dir}")
         return None
     for file_path in csv_files:
         try:
@@ -24,14 +24,14 @@ def load_multiple_csv(input_dir):
             required_cols = ['01. Ano', '02. Nome Região (Portugal)', '03. Âmbito Geográfico', '09. Valor']
 
             if not all(col in df.columns for col in required_cols):
-                print(f" Arquivo {file_name} não contém colunas obrigatórias. Ignorando...")
+                print(f"Arquivo {file_name} não contém colunas obrigatórias. Ignorando...")
                 continue
 
             dataframes[file_name] = df
             print(f" {file_name} carregado com sucesso ({len(df)} linhas)")
 
         except Exception as e:
-            print(f" Erro ao carregar {file_path}: {str(e)}. Ignorando...")
+            print(f"Erro ao carregar {file_path}: {str(e)}.")
             continue
 
     return dataframes if dataframes else None
@@ -49,8 +49,11 @@ def process_pordata_data(df, indicator_name):
         df = df[['Ano', 'Território', indicator_name]]
         df = df.dropna()
 
+        df[indicator_name] = pd.to_numeric(df[indicator_name], errors='coerce')
+        df = df.dropna(subset=[indicator_name])
+
         return df
-    
+
     except Exception as e:
-        print(f" Erro no pré-processamento de {indicator_name}: {str(e)}")
+        print(f'Erro no pré-processamento de {indicator_name}: {str(e)}')
         return None
