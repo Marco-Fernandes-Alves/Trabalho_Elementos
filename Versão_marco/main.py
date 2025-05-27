@@ -32,10 +32,10 @@ def main():
         return
     
     eda_dir = os.path.join(output_dir, 'eda')
-    analysis_dir = os.path.join(output_dir, 'analysis')
+    analise_dir = os.path.join(output_dir, 'analise')
     report_dir = os.path.join(output_dir, 'relatorio')
     os.makedirs(eda_dir, exist_ok=True)
-    os.makedirs(analysis_dir, exist_ok=True)
+    os.makedirs(analise_dir, exist_ok=True)
     os.makedirs(report_dir, exist_ok=True)
     
     if not generate_eda_report(df_final, eda_dir):
@@ -49,22 +49,21 @@ def main():
     clean_output = output_file.replace('.csv', '_clean.csv')
     df_clean.to_csv(clean_output, index=False)
     
-    df_analysis = unsupervised_analysis(df_clean, analysis_dir)
-    if df_analysis is None:
+    df_analise = unsupervised_analysis(df_clean, analise_dir)
+    if df_analise is None:
         print('Falha na análise descritiva.')
         return
     
-    if not generate_narrative_report(eda_dir, analysis_dir, report_dir):
+    if not generate_narrative_report(eda_dir, analise_dir, report_dir):
         print('Falha na geração do relatório narrativo.')
     
-    print('\nDataset Final')
-    print(f'Arquivo integrado: {output_file}')
+    print(f'\nArquivo integrado: {output_file}')
     print(f'Arquivo limpo: {clean_output}')
-    print(f'- Total de registros: {len(df_analysis)}')
+    print(f'\n- Total de registos: {len(df_analise)}')
     print(f'- Total de indicadores: {len(processed_dfs)}')
-    print(f'- Período coberto: {df_analysis["Ano"].min()} a {df_analysis["Ano"].max()}')
-    print(f'- Municípios incluídos: {df_analysis["Território"].nunique()}')
-    print(f'Relatório narrativo salvo em: {report_dir}')
+    print(f'- Período percorrido: {df_analise["Ano"].min()} a {df_analise["Ano"].max()}')
+    print(f'- Municípios incluídos: {df_analise["Território"].nunique()}')
+    print(f'\nRelatório narrativo salvo em: {report_dir}\n')
 
 if __name__ == '__main__':
     main()
