@@ -10,26 +10,7 @@ Integrar, analisar e extrair conhecimento de dados estatísticos municipais da [
 
 ## Estrutura do Projeto
 
-├── data/
-│ ├── raw/ # Dados brutos (CSVs da PORDATA)
-│ ├── processed/ # Resultados processados
-│ ├── data_integrada.csv
-│ ├── eda/ # Relatórios e gráficos da análise exploratória
-│ ├── analysis/ # Resultados da análise descritiva (clusters, PCA)
-│ └── relatorio/ # Relatório narrativo em Markdown
-│
-├── src/
-│ ├── recall.py # Carregamento e pré-processamento de dados
-│ ├── integrate.py # Integração de datasets
-│ ├── eda.py # Análise exploratória (EDA)
-│ ├── limpeza_de_dados.py # Limpeza e tratamento de outliers
-│ ├── analise_descritiva.py # Análise com K-means e PCA
-│ └── relatorio.py # Geração do relatório narrativo
-│
-├── main.py # Pipeline principal
-│
-├── requirements.txt
-└── README.md
+![image](https://github.com/user-attachments/assets/554ada07-536e-4fbd-80ee-6376c0206443)
 
 ## Requisitos
 - Python
