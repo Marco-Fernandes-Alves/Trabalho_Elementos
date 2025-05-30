@@ -1,54 +1,48 @@
 # Análise de Dados Municipais (PORDATA)
 
 Projeto desenvolvido no âmbito da disciplina de Elementos de Inteligência Artificial e Ciência de Dados.  
+
 **Autores**: Marco Fernandes Alves, Afonso Pina Claro, Ana Rita Carvalho Beleza Gomes  
 **Professor**: João C. Neves  
 **Instituição**: Universidade da Beira Interior (2024/25)
 
 ## Objetivo
-Integrar, analisar e extrair conhecimento de dados estatísticos municipais da [PORDATA](https://www.pordata.pt/), utilizando técnicas de ciência de dados e aprendizagem não supervisionada.
+
+Este projeto realiza uma análise econômica de Portugal utilizando dados da Pordata, focando em indicadores como PIB e PIB per capita.
 
 ## Estrutura do Projeto
 
+TP_Elementos/
 ├── data/
-│ ├── raw/ # Dados brutos (CSVs da PORDATA)
-│ ├── processed/ # Resultados processados
-│ ├── data_integrada.csv
-│ ├── eda/ # Relatórios e gráficos da análise exploratória
-│ ├── analysis/ # Resultados da análise descritiva (clusters, PCA)
-│ └── relatorio/ # Relatório narrativo em Markdown
-│
+│   └── raw/                    # Dados brutos da Pordata
+│       ├── PIB.csv
+│       └── PIB_per_capita.csv
 ├── src/
-│ ├── recall.py # Carregamento e pré-processamento de dados
-│ ├── integrate.py # Integração de datasets
-│ ├── eda.py # Análise exploratória (EDA)
-│ ├── limpeza_de_dados.py # Limpeza e tratamento de outliers
-│ ├── analise_descritiva.py # Análise com K-means e PCA
-│ └── relatorio.py # Geração do relatório narrativo
-│
-├── main.py # Pipeline principal
-│
+│   ├── recall.py               # Carregamento dos dados
+│   ├── integrate.py            # Integração dos datasets
+│   ├── eda.py                  # Análise exploratória de dados
+│   ├── limpeza_de_dados.py     # Limpeza de dados
+│   ├── analise_descritiva.py   # Análise econômica
+│   ├── relatorio.py            # Geração de relatório
+│   └── main.py                 # Script principal
 ├── requirements.txt
 └── README.md
 
 ## Requisitos
 - Python
 - Bibliotecas:  
-  pandas
-  numpy
-  scipy
-  scikit-learn
-  matplotlib
-  seaborn
+    pandas
+    scikit-learn
+    matplotlib
+    seaborn
+    scipy
+    openpyxl
 
 ## Como Executar
 
 1. **Instale as bibliotecas presentes no ficheiro:**
-    - requirements.txt
+    - bibliotecas.txt
 
-2. **Coloque os ficherios CSV que deseja analizar na pasta:**
-    - data/raw
-
-3. **Execute o ficheiro main.py da seguintes forma:**
+2. **Execute o ficheiro main.py da seguintes forma:**
     - Abra o CMD e digite:
         - python ../caminho/main.py
