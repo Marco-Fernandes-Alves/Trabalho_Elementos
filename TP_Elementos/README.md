@@ -12,21 +12,7 @@ Este projeto realiza uma análise econômica de Portugal utilizando dados da Por
 
 ## Estrutura do Projeto
 
-TP_Elementos/
-├── data/
-│   └── raw/                    # Dados brutos da Pordata
-│       ├── PIB.csv
-│       └── PIB_per_capita.csv
-├── src/
-│   ├── recall.py               # Carregamento dos dados
-│   ├── integrate.py            # Integração dos datasets
-│   ├── eda.py                  # Análise exploratória de dados
-│   ├── limpeza_de_dados.py     # Limpeza de dados
-│   ├── analise_descritiva.py   # Análise econômica
-│   ├── relatorio.py            # Geração de relatório
-│   └── main.py                 # Script principal
-├── requirements.txt
-└── README.md
+![image](https://github.com/user-attachments/assets/722ab659-0dda-4996-a415-a1db8886bd13)
 
 ## Requisitos
 - Python
