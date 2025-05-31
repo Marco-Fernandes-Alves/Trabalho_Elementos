@@ -6,7 +6,6 @@ def integrate_data(dataframes, output_file):
         if not dataframes:
             return None
 
-        # Juntar dataframes por ano
         df_final = dataframes[0]
         for df in dataframes[1:]:
             df_final = pd.merge(
@@ -19,8 +18,8 @@ def integrate_data(dataframes, output_file):
         # Ordenar por ano
         df_final = df_final.sort_values('Ano')
         
-        # Preencher valores ausentes
-        df_final = df_final.fillna(method='ffill').fillna(method='bfill')
+        # Correção aplicada: substituição do fillna obsoleto
+        df_final = df_final.ffill().bfill()
         
         # Salvar arquivo
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
